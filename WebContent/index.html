@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>eBanking</title>
+<link rel="stylesheet" type="text/css"  href="style.css" />
+
+<script type="text/javascript" language="javascript">
+
+function scrollChat(){
+	thisDiv = document.getElementById('chat');
+	thisDiv.scrollTop=thisDiv.scrollHeight - thisDiv.offsetHeight
+}
+
+var id = '0';
+function callRestGet(url){
+	var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", url, false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send();
+    return JSON.parse(xmlhttp.responseText);
+}
+function callRestPost(url, data){
+ 	var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", url, false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    //xmlhttp.setRequestHeader('Authorization', 'Basic ' + window.btoa('user:password')); 
+    xmlhttp.send(data);
+    return JSON.parse(xmlhttp.responseText);
+}
+function send()
+{	
+	var date = new Date();
+    var text = document.getElementById('inChat').value;    
+    document.getElementById("chat").innerHTML += "<div class='Client'>JA [ "+date.toLocaleString()+" ]<p>"+text+"</div>";
+    document.getElementById('inChat').value="";
+    var dataArray = callRestPost("api/message/"+id, text)
+	text ='';
+    for (var i=1; i<dataArray.length; i++){
+    	text += dataArray[i];
+    }    
+    document.getElementById("chat").innerHTML += "<div class='Bank'>Bank [ "+date.toLocaleString()+" ]<p>"+text+"</div>"
+    scrollChat()
+    id = dataArray[0]
+    onTransactions()
+}
+function onTransactions()
+{	
+    var dataArray = callRestGet("api/transactions/"+id);
+    var text ='';
+    for (var i=0; i<dataArray.length; i++){
+    	text += "<div class='transaction'>"+dataArray[i]+"</div>";
+    }    
+    document.getElementById("transactions").innerHTML = text;
+}
+function onReceivers()
+{	
+    var dataArray = callRestGet("api/receivers/"+id);
+    var text ='';
+    for (var i=0; i<dataArray.length; i++){
+    	text += "<div class='receiver'>"+dataArray[i]+"</div>";
+    }    
+    document.getElementById("receivers").innerHTML = text;
+}
+function chatSend(e) {
+    if(e.which == 13 && !e.shiftKey) {        
+        send();
+        e.preventDefault();
+        return false;
+    }
+}
+
+</script>
+</head>
+<body style="background-color:white;" onload="onReceivers()">
+<h1>Rozmowny Bank w Polsce :-)</h1>
+<table><tr><td>
+<div >
+<div id="chat" class="chat">
+</div>
+<textarea class="inChat" id="inChat" rows='2' cols='56' onkeypress="chatSend(event)"></textarea>
+</div></td>
+<td>
+<div>
+<h2>Twoje Transakcje</h2>
+<div id="transactions" class="transactions"></div>
+
+</div>
+</td>
+<td>
+<div>
+<H2>Zdefiniowani odbiorcy</H2>
+<div id="receivers" class="receivers"></div>
+
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
