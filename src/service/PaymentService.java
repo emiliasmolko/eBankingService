@@ -17,22 +17,21 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 
-import com.ibm.watson.developer_cloud.conversation.v1.model.Context;
-import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
+import com.ibm.watson.developer_cloud.assistant.v1.model.Context;
+import com.ibm.watson.developer_cloud.assistant.v1.model.MessageResponse;
 
-import dao.BankAccountDAO;
-import dao.WatsonConversation;
 
-@Path("/")
-public class EBankingService {
+import dao.PaymentConversation;
 
-	private static final String CLASS_NAME = EBankingService.class.getName();
+
+@Path("/payment/")
+public class PaymentService {
+
+	private static final String CLASS_NAME = PaymentService.class.getName();
 	private static final Logger LOGGER = Logger.getLogger(CLASS_NAME);
 
 	@Inject
-	private BankAccountDAO dao;
-	@Inject
-	private WatsonConversation conversation;
+	private PaymentConversation conversation;
 	private Client translateService;
 	private final String[] zlote = {"(?i)\\s?z(ł|l)oty(ch)?('.'|' ')?","(?i)\\s?z(ł|l)ote('.'|' ')?", "(?i)\\s?z(ł|l)('.'|' ')"};
 	private final String PLN = " PLN ";
@@ -54,7 +53,7 @@ public class EBankingService {
 		receivers.add("Edward Kozlowski");
 		receivers.add("Ewa Smolko");
 		receivers.add("Emilia Sokolowska");
-		LOGGER.fine("EBankingService ########################## postConstruct");
+		LOGGER.info("EBankingService ########################## postConstruct");
 	}
 
 	private String translate(String text) {
@@ -65,22 +64,22 @@ public class EBankingService {
 		}
 		message = replace(message, grosze, GROSZE);
 		
-		System.out.println("przed translate:"+message);
+		LOGGER.info("przed translate:"+message);
 		message = translateService.target("https://translate.googleapis.com/translate_a/single").queryParam("client", "gtx").queryParam("dt", "t")
 		        .queryParam("sl", "pl").queryParam("tl", "en").queryParam("ie", "UTF-8").queryParam("oe", "UTF-8")
 		        .queryParam("q", message)
 		        .request(MediaType.APPLICATION_JSON)
 		        .get(String.class);		
-		System.out.println("po translate1:"+message);
+		LOGGER.info("po translate1:"+message);
 		message = message.substring(4, message.indexOf("\",\"", 4));
-		
+		message = message.replaceAll(",", ".");
 		if(ifPLN) {
 			message = replace(" "+message+" ", grosze, GROSZE);
 		}
 		message = (" "+message+" ").replaceAll(PLN, GROSZE);
 		message = message.replaceFirst(GROSZE,PLN);
 		
-		System.out.println("po translate3:"+message);
+		LOGGER.info("po translate3:"+message);
 		return message;
 	}
 	private String replace(String source, String[] array, String target) {
@@ -94,11 +93,12 @@ public class EBankingService {
 	@Path("/message/{cn}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<String> runMessage(@PathParam("cn")String conversationId, String text) {
-		System.out.println("###########################" +conversationId+"###########"+text );		
+	public List<List<String>> runMessage(@PathParam("cn")String conversationId, String text) {
+		LOGGER.info("###########################" +conversationId+"###########"+text );		
   		MessageResponse mr = conversation.message(translate(text), conversationId);
 		Context context = mr.getContext();
-		System.out.println("runMessage"+mr);
+		ArrayList<String> transaction = null;
+		LOGGER.info("runMessage"+mr);
 		if (context!= null && context.get("operation")!= null) {
 			String operation = context.get("operation").toString();
 			if ( operation!= null && operation.equals("TRANSFER")) {
@@ -107,15 +107,22 @@ public class EBankingService {
 					transactions = new ArrayList<String>();
 					mem.put(conversationId, transactions);
 				}
-				String i = "DATA:" +context.get("transfer_date").toString()+ ", ODBIORCA:"+context.get("receiver").toString()+", KWOTA:"+context.get("amount").toString()+", WALUTA:"+context.get("currency").toString();
-				transactions.add(i);
+				transaction = new ArrayList<String>();
+				transaction.add("DATA:" +context.get("transfer_date").toString()+ ", ODBIORCA:"+context.get("receiver").toString()+", KWOTA:"+context.get("amount").toString()+", WALUTA:"+context.get("currency").toString());
+				transactions.add(transaction.get(0));
 				mr = conversation.message("ok", conversationId);
-				System.out.println("runMessage"+mr);
+				LOGGER.info("runMessage"+mr);
 			}
 		}
-		
-		List<String> result = mr.getOutput().getText();
-		result.add(0, mr.getContext().get("conversation_id").toString());
+		List<List<String>> result = new ArrayList<List<String>>();
+		ArrayList<String> tmp = new ArrayList<String>();
+		tmp.add(mr.getContext().get("conversation_id").toString());
+		result.add(0, tmp);
+		result.add(1,transaction);//transfer definition
+		result.add(2,null);//map
+		result.add(3,null);//enabled many buttons
+		result.add(4,mr.getOutput().getText());//text
+
 		return result;
 	}
 	@GET
@@ -130,32 +137,5 @@ public class EBankingService {
 	public List<String> getReceivers(@PathParam("cn")String conversationId) {
 		return receivers;
 	}
-/*
-	public BankAccount logIn(String email_and_password) {
-		BankAccount result = null;
-		try {
-			String[] splited_login_data = email_and_password.split(" ");
-			try {
-				result = dao.getBankAccountLogIn(splited_login_data[0], splited_login_data[1]);
-			} catch (NoResultException e) {
-				result = null;
-			}
 
-		} catch (ArrayIndexOutOfBoundsException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	public BankAccount logInFR(String email) {
-		BankAccount result = null;
-		try {
-			result = dao.getBankAccountLogIn(email);
-		} catch (NoResultException e) {
-			result = null;
-		}
-
-		return result;
-	}
-	*/
 }

@@ -13,7 +13,8 @@ public class EBankingApplication extends Application {
         Set<Class<?>> classes = new HashSet<Class<?>>();
         
         // Resources
-        classes.add( EBankingService.class );
+        classes.add( PaymentService.class );
+        classes.add( AwizoService.class );
         //Loaders
         return classes;
     }
