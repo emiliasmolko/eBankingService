@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>polishBanking</title>
+<link rel="stylesheet" type="text/css"  href="style2.css" />
+<script type="text/javascript" language="javascript">
+var id = '0';
+var demo = 'payment';
+function show(id){
+	document.getElementById(id).classList.add('show');
+}
+function hide(id) {
+	document.getElementById(id).classList.remove('show');
+}
+function clearChat(){
+	elem = document.getElementById("chat-list")
+    oldText = elem.innerHTML;			
+	elem.innerHTML= oldText.substring(oldText.indexOf("<div class=\"chat-list__loader\">"))
+	elem.scrollTop=elem.scrollHeight - elem.offsetHeight
+	id = '0';
+}
+function showD2(){
+	hide('T1');
+	document.getElementById("D").innerHTML= '<p class="ibm-type-c">2/2</p><p class="ibm-type-c duo-gray-20">Awizacja wypłaty</p>'+
+		'<p class="ibm-type-c duo-gray-50">Cyfrowy asystent pomoże Ci znaleźć placówkę, w której w dogodnym terminie pobierzesz gotówkę.</p>	<div class="path-selection__nav-buttons">	<button class="demo-button" onclick="showD1()"><svg width="20" height="20"'+
+		'viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><defs></defs><title>icons</title><g id="VR-Demo----Desktop" fill="none" fill-rule="evenodd">'+
+		'<g id="1056_VR_Demo_Custom_Model_How-to-train-02.1" transform="translate(-527 -508)"><g id="arrow--right-copy-15" transform="matrix(-1 0 0 1 544 505)">'+
+		'<g id="Icon" transform="translate(1.25 3.75)" fill="#d8d8d8" fill-rule="nonzero"><path id="Shape" d="M9.375 0l-.881.881 4.737 4.744H0v1.25h13.231l-4.737 4.744.881.881 6.25-6.25z">'+
+		'</path></g></g></g></g></svg></button><button class="demo-button" onclick="showD1()"><svg width="20" height="20" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><defs>'+
+		'</defs><title>icons</title><g id="VR-Demo----Desktop" fill="none" fill-rule="evenodd"><g id="1056_VR_Demo_Custom_Model_How-to-train-02.1"><g id="arrow--right-copy-15"><g id="Icon"'+
+		'fill="#d8d8d8" fill-rule="nonzero"><path id="Shape" d="M9.375 0l-.881.881 4.737 4.744H0v1.25h13.231l-4.737 4.744.881.881 6.25-6.25z"></path></g></g></g></g></svg></button></div>';
+	clearChat()
+	demo = 'awizo';
+	
+}
+function showD1(){
+	hide('T1');
+	document.getElementById("D").innerHTML= '<p class="ibm-type-c">1/2</p><p class="ibm-type-c duo-gray-20">Zlecenie płatności do zdefiniowanych odbiorców</p>'+
+		'<p class="ibm-type-c duo-gray-50">Mamy następujących obiorców: PGNIG, Innogy, UPC, Szkoła, Maria Nowak, Jan Kowalski, Edward Kozlowski, Ewa Kułacja, Emilia Sokolowska.</p>	<div class="path-selection__nav-buttons">	<button class="demo-button" onclick="showD2()"><svg width="20" height="20"'+
+		'viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><defs></defs><title>icons</title><g id="VR-Demo----Desktop" fill="none" fill-rule="evenodd">'+
+		'<g id="1056_VR_Demo_Custom_Model_How-to-train-02.1" transform="translate(-527 -508)"><g id="arrow--right-copy-15" transform="matrix(-1 0 0 1 544 505)">'+
+		'<g id="Icon" transform="translate(1.25 3.75)" fill="#d8d8d8" fill-rule="nonzero"><path id="Shape" d="M9.375 0l-.881.881 4.737 4.744H0v1.25h13.231l-4.737 4.744.881.881 6.25-6.25z">'+
+		'</path></g></g></g></g></svg></button><button class="demo-button" onclick="showD2()"><svg width="20" height="20" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><defs>'+
+		'</defs><title>icons</title><g id="VR-Demo----Desktop" fill="none" fill-rule="evenodd"><g id="1056_VR_Demo_Custom_Model_How-to-train-02.1"><g id="arrow--right-copy-15"><g id="Icon"'+
+		'fill="#d8d8d8" fill-rule="nonzero"><path id="Shape" d="M9.375 0l-.881.881 4.737 4.744H0v1.25h13.231l-4.737 4.744.881.881 6.25-6.25z"></path></g></g></g></g></svg></button></div>'
+	clearChat()
+	demo = 'payment';
+}
+
+function setBranch(tmp){
+	var text="";
+	text+='<button id="mapButton" class="ibm-type-b chat-option__button " onclick="mapSelect('+tmp.id+')"> '+tmp.name+', '+tmp.address+'</br> '+tmp.opened.info+'</button>'
+	document.getElementById("mapInfo").innerHTML=text;
+}
+function addMarker(map, tmp,l){
+	 var marker = new google.maps.Marker({
+		    position: {lat: tmp.lat, lng:tmp.lng},
+		    map: map,
+		    label: l,
+		    title: tmp.name+"\n"+tmp.address+"\n"+tmp.opened.info
+	});
+	marker.addListener('click', function() {
+		    map.setZoom(15);
+		    map.setCenter({lat: tmp.lat, lng:tmp.lng});
+		    setBranch(tmp);
+	});	
+}
+function initMap(mapArray) {
+	var tmp= JSON.parse(mapArray[0])
+	var city = {lat: tmp.lat, lng: tmp.lng};
+	var map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 13,
+	    center: city
+	});
+	
+	for (var i=1; i<mapArray.length; i++){
+		tmp= JSON.parse(mapArray[i])
+		addMarker(map, tmp,""+i);
+
+	}
+
+}
+function callRestGet(url){
+	var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", url, false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send();
+    return JSON.parse(xmlhttp.responseText);
+}
+function callRestPost(url, data){
+ 	var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", url, false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    //xmlhttp.setRequestHeader('Authorization', 'Basic ' + window.btoa('user:password')); 
+    xmlhttp.send(data);
+    return JSON.parse(xmlhttp.responseText);
+}
+function updateChat(clientValue,dataArray){
+	var newText = '<div class="chat-message chat-message--anchor-right"><p class="chat-message--user ibm-type-b">'+clientValue+'</p></div>';
+	if (dataArray[1]!=null && dataArray[1].length>0){ //single disabled button
+		newText += '<div class="chat-option-list"><button class="ibm-type-b chat-option__button chat-option__button--selected" disabled="">'+dataArray[1]+'</button></div>';
+	}
+	if (dataArray[4]!=null){
+		for (var i=0; i<dataArray[4].length; i++){
+			newText += '<div class="chat-message chat-message--bot"><p class="ibm-type-c">'+dataArray[4][i]+'</p></div>';
+    	} 
+	}
+	if (dataArray[3]!=null && dataArray[3].length>0){ //list of choices
+		newText += '<div class="chat-option-list">';
+		for (var i=0; i<dataArray[3].length; i++){
+			newText += '<button class="ibm-type-b chat-option__button " onclick="clientSelect(\''+dataArray[3][i]+'\')" >'+dataArray[3][i]+'</button>';
+		}
+		newText += '</div>';
+	}
+	if (dataArray[2]!=null && dataArray[2].length>0){//map
+		newText += '<div id="map"></div><div id="mapInfo" class="chat-option-list" ></div>';
+	} 
+	elem = document.getElementById("chat-list")
+    oldText = elem.innerHTML;			
+	elem.innerHTML= oldText.substring(0,oldText.indexOf("<div class=\"chat-list__loader\">"))+newText+oldText.substring(oldText.indexOf("<div class=\"chat-list__loader\">"))
+	document.getElementById("clientText").value="";
+	id = dataArray[0][0];
+	if (dataArray[2]!=null && dataArray[2].length>0){//map
+		initMap(dataArray[2])
+		
+	}
+	elem.scrollTop=elem.scrollHeight - elem.offsetHeight
+}
+function mapSelect(branchId){
+	elem = document.getElementById("map")
+	elem.parentNode.removeChild(elem);
+	elem = document.getElementById("mapButton")
+	
+	text = elem.innerHTML;
+	elem = document.getElementById("mapInfo")
+	elem.parentNode.removeChild(elem);
+	var dataArray = callRestPost("/api/"+demo+"/branch/"+id, branchId)
+	updateChat(text,dataArray);
+	
+}
+function addResponse(e){
+	if(e.which == 13 && !e.shiftKey) { 
+		e.preventDefault();
+		clientValue=document.getElementById("clientText").value
+		if (clientValue.length>1){
+			var dataArray = callRestPost("/api/"+demo+"/message/"+id, clientValue)
+			updateChat(clientValue,dataArray);
+		}
+	 	return false;
+	}
+}
+function clientSelect(selected){
+	var dataArray = callRestPost("/api/"+demo+"/message/"+id, selected)
+	updateChat(selected,dataArray);
+}
+</script>
+</head>
+<body >
+ <!--  
+
+		 <div class="chat-option-list"><button class="ibm-type-b chat-option__button ">Card # 5624</button><button class="ibm-type-b chat-option__button ">Card # 5893</button>
+		 <button class="ibm-type-b chat-option__button ">Card # 9225</button></div>
+		 <div class="chat-option-list"><button class="ibm-type-b chat-option__button chat-option__button--selected" disabled="">Due Date</button></div>
+
+		  -->
+<div id="root"><div data-reactroot="" class="ibm App">
+
+<div class="ibm-col-lg-4 ibm-col-md-2 ibm-col-sm-0 path-selection__container">
+<div class="path-selection__path-header"><button class="demo-button" onclick="show('T1')">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20">
+<defs></defs><title>icons</title><g id="Icon"><path d="M4 6h24v2H4zM4 24h24v2H4zM4 15h24v2H4z"></path></g>
+<path class="cls-1" d="M0 0h32v32H0z" id="Transparent_Rectangle" data-name="Transparent Rectangle"></path></svg></button>
+<p class="ibm-type-a">Zobacz wszystkie funkcjonalności</p></div>
+
+<div id="T1" class="overlay"><div class="modal"><div class="path-selection-overlay__container">
+	<div class="path-selection-overlay"><div class="path-selection-overlay__card-group">
+	<div class="path-selection-card__card-intro"><p class="ibm-type-c">
+	W tej demonstracji, Watson Assistant został wytrenowany do wybranych funkcjonalności bankowych. Wybierz scenariusz do zapoznania.</p></div>
+	<button class="path-selection-card ibm-type-c" onclick="showD1()"><p class="ibm-type-c">Zlecenie płatności do zdefiniowanych odbiorców.</p>
+	<svg width="32" height="32" viewBox="0 0 32 32" preserveAspectRatio="xMinYMax meet" xmlns="http://www.w3.org/2000/svg"><g fill-rule="fff" fill="#FFF">
+	<path d="M11 1.571a9.429 9.429 0 1 1 0 18.858A9.429 9.429 0 0 1 11 1.57zM11 0C4.925 0 0 4.925 0 11s4.925 11 11 11 11-4.925 11-11A11 11 0 0 0 11 0z"></path>
+	<path d="M11 6.325L9.892 7.433l2.774 2.781H6.325v1.572h6.34l-2.773 2.781L11 15.675 15.675 11z"></path></g></svg></button>
+	<button class="path-selection-card ibm-type-c" onclick="showD2()"><p class="ibm-type-c">Awizacja wypłaty</p>
+	<svg width="32" height="32" viewBox="0 0 32 32" preserveAspectRatio="xMinYMax meet" xmlns="http://www.w3.org/2000/svg"><g fill-rule="fff" fill="#FFF">
+	<path d="M11 1.571a9.429 9.429 0 1 1 0 18.858A9.429 9.429 0 0 1 11 1.57zM11 0C4.925 0 0 4.925 0 11s4.925 11 11 11 11-4.925 11-11A11 11 0 0 0 11 0z"></path>
+	<path d="M11 6.325L9.892 7.433l2.774 2.781H6.325v1.572h6.34l-2.773 2.781L11 15.675 15.675 11z"></path></g></svg></button>
+	</div></div></div>
+	<button class="modal--x" onclick="hide('T1')"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#777677" width="16" height="16" class="icon icon">
+	<circle fill="none" class="st0" cx="11.9" cy="12" r="10"></circle>
+	<polygon points="15.2,7.6 11.9,10.9 8.5,7.6 7.4,8.7 10.8,12 7.4,15.4 8.5,16.5 11.9,13.1 15.2,16.5 16.3,15.4 13,12 16.3,8.7 "></polygon>
+	<path d="M11.9,1C5.8,1,0.9,6,0.9,12s4.9,11,11,11s11-5,11-11S17.9,1,11.9,1z M11.9,21.5c-5.2,0-9.4-4.2-9.4-9.4s4.2-9.4,9.4-9.4s9.4,4.2,9.4,9.4S17.1,21.5,11.9,21.5z"></path>
+	</svg></span></button></div>
+</div>
+<div id="D" class="path-selection__description"><p class="ibm-type-c">1/2</p>
+<p class="ibm-type-c duo-gray-20">Zlecenie płatności do zdefiniowanych odbiorców</p>
+<p class="ibm-type-c duo-gray-50"> Mamy następujących obiorców: PGNIG, Innogy, UPC, Szkoła, Maria Nowak, Jan Kowalski, Edward Kozlowski, Ewa Kułacja, Emilia Sokolowska.</p>
+<div class="path-selection__nav-buttons">
+<button class="demo-button" onclick="showD2()">
+<svg width="20" height="20" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><defs></defs>
+<title>icons</title><g id="VR-Demo----Desktop" fill="none" fill-rule="evenodd"><g id="1056_VR_Demo_Custom_Model_How-to-train-02.1" transform="translate(-527 -508)">
+<g id="arrow--right-copy-15" transform="matrix(-1 0 0 1 544 505)"><g id="Icon" transform="translate(1.25 3.75)" fill="#d8d8d8" fill-rule="nonzero">
+<path id="Shape" d="M9.375 0l-.881.881 4.737 4.744H0v1.25h13.231l-4.737 4.744.881.881 6.25-6.25z"></path></g></g></g></g></svg></button><button class="demo-button" onclick="showD2()">
+<svg width="20" height="20" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><defs></defs><title>icons</title><g id="VR-Demo----Desktop" fill="none" fill-rule="evenodd">
+<g id="1056_VR_Demo_Custom_Model_How-to-train-02.1"><g id="arrow--right-copy-15"><g id="Icon" fill="#d8d8d8" fill-rule="nonzero">
+<path id="Shape" d="M9.375 0l-.881.881 4.737 4.744H0v1.25h13.231l-4.737 4.744.881.881 6.25-6.25z"></path></g></g></g></g></svg></button></div></div>
+
+</div>
+
+<div class="ibm-col-lg-8 ibm-col-md-6 ibm-col-sm-4 chat-container"><div class="ibm-lg-col-4 ibm-padding chat-container__header"><p class="ibm-type-a">Asystent Bankowy</p></div>
+<div id="chat-container__list-wrapper" class="chat-container__list-wrapper">
+<div id="chat-list" class="ibm-lg-col-4 ibm-padding chat-list">
+
+<div class="chat-list__loader"><p class="ibm-type-c"><!-- react-text: 79 -->&nbsp;<!-- /react-text --><span></span></p></div>
+<div id="chat-list-bottom">&nbsp;</div></div></div>
+
+
+
+<div class="ibm-lg-col-4 ibm-padding chat-container__input">
+<div class="input-with-button"><input id="clientText" placeholder="Pisz tutaj..." type="text" onkeypress="addResponse(event)">
+<button class="input-with-button--button" ><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.6 37.8" fill="#000000" width="16" height="16" class="icon icon icon_small">
+<path d="M21.6,19.1L2.9,37.8L0,34.9l15.8-15.8L0,2.9L2.9,0L21.6,19.1z"></path></svg></span></button>
+</div></div></div>
+
+<div class="ibm-col-lg-4 options-sidebar">
+<div class="options-sidebar-container"><div class="options-panel">
+<!-- <button class="demo-button demo-toggle-button " onclick="alert('Brak implementacji jeszcze :-)')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"><defs></defs>
+<title>icons</title><g id="Icon"><path d="M31 16l-7 7-1.414-1.414L28.172 16l-5.586-5.586L24 9l7 7zM1 16l7-7 1.414 1.414L3.828 16l5.586 5.586L8 23l-7-7z"></path>
+<path transform="rotate(-75 16 16)" d="M5.915 15h20.17v2H5.915z"></path></g>
+<path class="cls-1" transform="rotate(-90 16 16)" d="M0 0h32v32H0z" id="Transparent_Rectangle" data-name="Transparent Rectangle"></path></svg></button>
+-->
+<button class="demo-button" onclick="clearChat()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20"><defs></defs><title>icons</title>
+<path d="M25 18a10 10 0 1 1-10-9.999h6.182l-3.584 3.584L19.012 13l6-6-6-6-1.414 1.415 3.587 3.587H15a12 12 0 1 0 12 12z" id="Icon"></path>
+<path class="cls-1" d="M0 0h32v32H0z" id="Transparent_Rectangle" data-name="Transparent Rectangle"></path></svg></button>
+
+</div>
+<div class="demo-notification active"><div id="T2" class="overlay show"><div class="modal"><div class="demo-notification__content">
+<div class="demo-notification__notification"><p class="ibm-type-b">Ten system służy wyłącznie do demonstracji i nie jest przewidziany do przetwarzania danych osobowych. 
+Prosimy o nie wprowadzanie danych chronionych, system nie spełnia wymogów Ochrony Danych Osobowych [General Data Protection Regulation (EU) 2016/679].</p></div></div>
+<button class="modal--x" onclick="hide('T2')"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#777677" width="16" height="16" class="icon icon">
+<circle fill="none" class="st0" cx="11.9" cy="12" r="10"></circle><polygon points="15.2,7.6 11.9,10.9 8.5,7.6 7.4,8.7 10.8,12 7.4,15.4 8.5,16.5 11.9,13.1 15.2,16.5 16.3,15.4 13,12 16.3,8.7 "></polygon>
+<path d="M11.9,1C5.8,1,0.9,6,0.9,12s4.9,11,11,11s11-5,11-11S17.9,1,11.9,1z M11.9,21.5c-5.2,0-9.4-4.2-9.4-9.4s4.2-9.4,9.4-9.4s9.4,4.2,9.4,9.4S17.1,21.5,11.9,21.5z"></path></svg></span></button>
+</div></div></div>
+<div class="json-pane json-pane--hidden"><div class="results--json json-link-inline"><div class="json-link-inline--desc"><span></span></div><div class="json-link-inline--spacer"></div>
+<a class="base--a json-link-inline--link" rel="noopener noreferrer"><span class="json-link-inline--span">JSON</span><span class="json-link-inline--icon-1"><span>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#4178BE" width="69.9" height="28.4" class="icon icon icon_small">
+<polygon points="46.2,32.2 46.2,50.1 13.9,50.1 13.9,17.8 32.7,17.8 25.9,24 20.1,24 20.1,43.9 40,43.9 40,38 "></polygon>
+<polygon points="56.2,9 56.2,15.7 56.2,15.7 56.2,25.9 49.5,25.9 49.5,20.1 30.5,37.6 26,32.6 44.4,15.7 39.4,15.7 39.4,9 "></polygon></svg></span></span>
+<span class="json-link-inline--icon-2"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.6 37.8" fill="#4178BE" width="16" height="16" class="icon icon icon_small">
+<path d="M21.6,19.1L2.9,37.8L0,34.9l15.8-15.8L0,2.9L2.9,0L21.6,19.1z"></path></svg></span></span></a><div class="json-link-inline--overlay">
+<div class="code-block--code"><pre class="base--pre line-numbers  language-json"><code class="prism  language-json"></code></pre></div>
+<button class="json-link-inline--button" ><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="16" height="16" class="icon icon">
+<circle fill="none" class="st0" cx="11.9" cy="12" r="10"></circle><polygon points="15.2,7.6 11.9,10.9 8.5,7.6 7.4,8.7 10.8,12 7.4,15.4 8.5,16.5 11.9,13.1 15.2,16.5 16.3,15.4 13,12 16.3,8.7 "></polygon>
+<path d="M11.9,1C5.8,1,0.9,6,0.9,12s4.9,11,11,11s11-5,11-11S17.9,1,11.9,1z M11.9,21.5c-5.2,0-9.4-4.2-9.4-9.4s4.2-9.4,9.4-9.4s9.4,4.2,9.4,9.4S17.1,21.5,11.9,21.5z"></path></svg></span></button></div></div></div>
+</div></div></div></div>
+
+</body>
+</script>
+<!--  key=YOUR_API_KEY& -->
+<script async defer src="https://maps.googleapis.com/maps/api/js"></script>
+</html>

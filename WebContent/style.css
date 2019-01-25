@@ -1,0 +1,81 @@
+
+@charset "UTF-8";
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+div.chat {
+	width: 480px;
+	height: 70vh;
+	overflow: scroll/auto; overflow-x: hidden;
+
+	}
+div.transactions {
+	width: 480px;
+	height: 70vh;
+	overflow: scroll/auto; overflow-x: hidden;
+    background: #f7f7f7;
+}
+div.transaction {
+    box-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: left;
+    border-radius: 5px;
+    background: grey;
+    color:white;
+    padding: 10px; 
+    margin: 10px;
+    width: 400px;
+}
+div.receivers {
+	width: 480px;
+	height: 70vh;
+	overflow: scroll/auto; overflow-x: hidden;
+	background: #e7e7e7;
+	}
+div.receiver {
+    box-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: left;
+    border-radius: 5px;
+    background: grey;
+    color:white;
+    padding: 10px; 
+    margin: 10px;
+    width: 400px;
+}
+div.Client {
+    box-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 5px 30px 30px;
+    background: grey;
+    color:white;
+    padding: 10px; 
+    margin: 10px;
+    width: 400px;
+}
+div.Bank {
+    box-align: right;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 30px 5px 30px 30px;
+    background: white;
+    color:grey;
+    padding: 10px; 
+    margin: 10px;
+    width: 400px;
+}

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 400px;  
+       }
+    </style>
+  </head>
+  <body>
+
+    <div id="map"></div>
+<script>
+function addMarker(map, p, l){
+	 var marker = new google.maps.Marker({
+		    position: p,
+		    map: map,
+		    label: l
+	});
+	marker.addListener('click', function() {
+		    map.setZoom(15);
+		    map.setCenter(p);
+		    alert(l);
+	});	
+}
+function initMap() {
+	  var Warszawa = {lat: 52.2328136, lng: 20.9911531};
+
+	  var map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 13,
+	    center: Warszawa
+	  });
+
+	  addMarker(map, {lat:52.2304258, lng:20.9995423},'1');
+	  addMarker(map, {lat:52.2288765, lng:21.0020228},'2');	  	  
+}
+
+</script>
+<!--  key=YOUR_API_KEY& -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+
+</html>
