@@ -1,0 +1,796 @@
+{
+  "name": "eBankingChat",
+  "intents": [
+    {
+      "intent": "recipient",
+      "examples": [
+        {
+          "text": "define recipient"
+        },
+        {
+          "text": "add recipient"
+        }
+      ]
+    },
+    {
+      "intent": "accept",
+      "examples": [
+        {
+          "text": "fine"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "approve"
+        },
+        {
+          "text": "confirm"
+        },
+        {
+          "text": "okay"
+        },
+        {
+          "text": "Fantastic"
+        },
+        {
+          "text": "of course"
+        },
+        {
+          "text": "Sure"
+        },
+        {
+          "text": "yes"
+        },
+        {
+          "text": "good"
+        },
+        {
+          "text": "Accept"
+        },
+        {
+          "text": "ok"
+        },
+        {
+          "text": "do"
+        },
+        {
+          "text": "well"
+        }
+      ]
+    },
+    {
+      "intent": "banktransfer",
+      "examples": [
+        {
+          "text": "make a payment"
+        },
+        {
+          "text": "make expense"
+        },
+        {
+          "text": "Tip up"
+        },
+        {
+          "text": "Pay for"
+        },
+        {
+          "text": "Do a transfer"
+        },
+        {
+          "text": "Send a money"
+        },
+        {
+          "text": " in three days "
+        },
+        {
+          "text": "pay"
+        },
+        {
+          "text": "send"
+        }
+      ]
+    },
+    {
+      "intent": "reject",
+      "examples": [
+        {
+          "text": "error"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "never"
+        },
+        {
+          "text": "not"
+        },
+        {
+          "text": "change"
+        },
+        {
+          "text": "bad"
+        },
+        {
+          "text": "different"
+        },
+        {
+          "text": "wrong"
+        }
+      ]
+    },
+    {
+      "intent": "end",
+      "examples": [
+        {
+          "text": "leave"
+        },
+        {
+          "text": "end"
+        },
+        {
+          "text": "quit"
+        },
+        {
+          "text": " nothing "
+        },
+        {
+          "text": "no thanks"
+        },
+        {
+          "text": "finish"
+        },
+        {
+          "text": "close"
+        },
+        {
+          "text": "exit"
+        },
+        {
+          "text": "shut up"
+        },
+        {
+          "text": " goodbye "
+        },
+        {
+          "text": " I do not want anything "
+        },
+        {
+          "text": " in nothing "
+        },
+        {
+          "text": " that's all "
+        }
+      ]
+    },
+    {
+      "intent": "welcome",
+      "examples": [
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "Welcome"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "kodpocztowy",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "polski",
+          "patterns": [
+            "nn-nnn"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "sys-currency",
+      "values": []
+    },
+    {
+      "entity": "receiver",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Szkoła",
+          "synonyms": [
+            "school"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "IBM",
+          "synonyms": [
+            "Eye Bee M"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Edward Kozlowski",
+          "synonyms": [
+            "Edek",
+            "Edzio",
+            "Kozlowski",
+            "Edward"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ewa Smolko",
+          "synonyms": [
+            "Ewa",
+            "Ewcia",
+            "doughter",
+            "Ewunia"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PGNIG",
+          "synonyms": [
+            "gazownia",
+            "pegenige",
+            "gas",
+            "gaz"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Innogy",
+          "synonyms": [
+            "electricity",
+            "RWE",
+            "enera",
+            "light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Maria Nowak",
+          "synonyms": [
+            "Maria",
+            "Marysia"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "UPC",
+          "synonyms": [
+            "internet",
+            "cable",
+            "upc"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Jan Kowalski",
+          "synonyms": [
+            "Janek",
+            "Kowalski"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Emilia Sokolowska",
+          "synonyms": [
+            "Emilia",
+            "Sokolowska"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "Polish responses from English input",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Poproszę o poprawne dane do płatności."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1504083076636",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1504083076636"
+      },
+      "conditions": "#reject",
+      "dialog_node": "node_2_1511258392508",
+      "previous_sibling": "node_1_1511258302816"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1504083076636",
+      "metadata": {
+        "_customization": {}
+      },
+      "variable": "$transfer_date",
+      "dialog_node": "slot_58_1513257930739",
+      "previous_sibling": "slot_3_1504083144581"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1504083076636",
+      "metadata": {},
+      "variable": "$amount",
+      "conditions": "entities ['sys-number']!=null && entities['sys-number'].toList().size()==1 && entities ['sys-number']>0",
+      "dialog_node": "slot_6_1513771145519",
+      "previous_sibling": "slot_58_1513257930739"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Zlecam przelew dla $receiver na kwotę $amount $currency w dniu $transfer_date. Czy potwierdzasz poprawność danych?",
+            "Czy potwierdzasz płatność dla $receiver na kwotę $amount $currency w dniu $transfer_date?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1504083076636",
+      "disabled": true,
+      "dialog_node": "node_2_1511353548423",
+      "previous_sibling": "node_2_1511258392508"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1504083076636",
+      "metadata": {
+        "_customization": {}
+      },
+      "variable": "amount",
+      "conditions": "entities ['sys-number']!=null && entities['sys-number'].toList().size()>1 && entities ['sys-number'][0]>0 && entities ['sys-number'][1]>0",
+      "dialog_node": "slot_18_1513772233466",
+      "previous_sibling": "slot_6_1513771145519"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Proszę podaj odbiorcę płatności, kwotę i datę kiedy ma zostać wykonana.",
+            "Do zlecenia przelewu potrzebuję kwotę, odbiorcę i datę."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1504083076636",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_2_1504083144556",
+      "previous_sibling": "slot_59_1515689852982"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1504083076636",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "variable": "$amount",
+      "dialog_node": "slot_59_1515689852982",
+      "previous_sibling": "slot_18_1513772233466"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1504083076636",
+      "metadata": {},
+      "variable": "$amount",
+      "conditions": "@sys-currency>0",
+      "dialog_node": "slot_60_1513773798310",
+      "previous_sibling": "node_2_1511353548423"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1504083076636",
+      "metadata": {},
+      "variable": "$receiver",
+      "dialog_node": "slot_3_1504083144581",
+      "previous_sibling": "slot_60_1513773798310"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Zlecam przelew..."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1504083076636",
+      "context": {
+        "operation": "TRANSFER"
+      },
+      "metadata": {},
+      "conditions": "#accept && ! @sys-number && ! @receiver && !@sys-currency && !@sys-date",
+      "dialog_node": "node_1_1511258302816"
+    },
+    {
+      "type": "standard",
+      "title": "clear data",
+      "output": {
+        "text": {
+          "values": [
+            "Przelew został wykonany. Czy chcesz wykonać inną operację?",
+            "Operacja została wykonana poprawnie. W czym mogę jeszcze pomóc?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1511258302816",
+      "context": {
+        "amount": null,
+        "receiver": null,
+        "operation": null,
+        "transfer_date": null
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1504083076636"
+      },
+      "conditions": "#accept",
+      "dialog_node": "node_62_1511270414468"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1504083144581",
+      "context": {
+        "receiver": "@receiver"
+      },
+      "metadata": {},
+      "conditions": "@receiver",
+      "event_name": "input",
+      "dialog_node": "handler_4_1504083144581",
+      "previous_sibling": "handler_5_1504083144581"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Rozumiem, że odbiorcą jest $receiver.",
+            "Odbiorca to $receiver.",
+            "Chcesz wysłać pieniądze do $receiver."
+          ],
+          "selection_policy": "random"
+        }
+      },
+      "parent": "slot_3_1504083144581",
+      "metadata": {},
+      "event_name": "filled",
+      "dialog_node": "handler_4_1511260342880",
+      "previous_sibling": "handler_4_1504083144581"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Podaj odbiorcę przelewu."
+      },
+      "parent": "slot_3_1504083144581",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_5_1504083144581"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_58_1513257930739",
+      "context": {
+        "transfer_date": "@sys-date"
+      },
+      "metadata": {},
+      "conditions": "@sys-date.sameOrAfter(now().reformatDateTime('yyyy-MM-dd'))",
+      "event_name": "input",
+      "dialog_node": "handler_59_1513257930739",
+      "previous_sibling": "handler_60_1513257930739"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Planowana data płatności to $transfer_date."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_58_1513257930739",
+      "metadata": {},
+      "event_name": "filled",
+      "dialog_node": "handler_80_1513260198678",
+      "previous_sibling": "handler_59_1513257930739"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Poproszę o datę do wykonania przelewu dzisiaj lub w przyszłości."
+      },
+      "parent": "slot_58_1513257930739",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_60_1513257930739"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1513771145519",
+      "context": {
+        "amount": "@sys-number"
+      },
+      "metadata": {},
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_7_1513771145519",
+      "previous_sibling": "handler_8_1513771145519"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1513771145519",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_8_1513771145519"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": []
+        }
+      },
+      "parent": "slot_59_1515689852982",
+      "context": {
+        "amount": null
+      },
+      "metadata": {},
+      "conditions": "$amount<=0 || @sys-number<0.01",
+      "event_name": "filled",
+      "dialog_node": "handler_21_1539848421339",
+      "previous_sibling": "handler_60_1515689852982"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_59_1515689852982",
+      "context": {
+        "amount": "@sys-number"
+      },
+      "metadata": {},
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_60_1515689852982",
+      "previous_sibling": "handler_61_1515689852982"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Podaj kwotę płatności, która jest większa od 0."
+      },
+      "parent": "slot_59_1515689852982",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_61_1515689852982"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_18_1513772233466",
+      "context": {
+        "amount": "entities['sys-number'][0].entities['sys-number'][1]"
+      },
+      "metadata": {},
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_19_1513772233466",
+      "previous_sibling": "handler_20_1513772233466"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_18_1513772233466",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_20_1513772233466"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_60_1513773798310",
+      "context": {
+        "amount": "@sys-currency",
+        "currency": "@sys-currency.unit"
+      },
+      "metadata": {},
+      "conditions": "@sys-currency",
+      "event_name": "input",
+      "dialog_node": "handler_61_1513773798310",
+      "previous_sibling": "handler_62_1513773798310"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_60_1513773798310",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_62_1513773798310"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            ""
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_12_1511261291494",
+      "disabled": true,
+      "conditions": "$amount or $receiver or $transfer_date",
+      "dialog_node": "node_13_1511261410321"
+    },
+    {
+      "type": "standard",
+      "title": "Recipient",
+      "output": {
+        "text": {
+          "values": [
+            "Niestety jeszcze nie umiem dodawać odbiorców. Przepraszam.",
+            "Najmocniej przepraszam, odbircę musisz zdefiniować w innym systemie. Ja tego nie potrafie jeszcze."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "conditions": "#recipient",
+      "dialog_node": "node_22_1511952047838",
+      "previous_sibling": "node_1_1504083076636"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "text": {
+          "values": [
+            "Nie rozumiem. Proszę sformułuj swoją wypowiedź inaczej.",
+            "Powiedz to inaczej. Nie rozumiem.",
+            "Nie rozpoznaję polecenia. Proszę powtórz inaczej."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_22_1511952047838"
+    },
+    {
+      "type": "frame",
+      "title": "BankTransfer",
+      "output": {
+        "text": {
+          "values": [
+            "Zlecam przelew dla $receiver na kwotę $amount $currency w dniu $transfer_date. Czy potwierdzasz poprawność danych?",
+            "Czy potwierdzasz płatność dla $receiver na kwotę $amount $currency w dniu $transfer_date ?"
+          ],
+          "selection_policy": "random"
+        }
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1511258302816"
+      },
+      "conditions": "(#banktransfer || #accept || @sys-number || @sys-currency || @receiver || @sys-date) && !#end",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1504083076636",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_12_1511261291494",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Dziękuję. Do usłyszenia."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#end",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_12_1511261291494",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "text": {
+          "values": [
+            "Dzień dobry. Umiem robić przelewy bankowe. Czy mogę Ci pomóc?",
+            "Dzień dobry. Jaki przelew mamy do zdefiniowania?"
+          ],
+          "selection_policy": "random"
+        }
+      },
+      "metadata": {},
+      "conditions": "welcome || #welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "f09458fd-a571-419a-85db-aea845c0b705",
+  "counterexamples": [
+    {
+      "text": "fifty"
+    },
+    {
+      "text": "thousand"
+    },
+    {
+      "text": "thousand and two"
+    },
+    {
+      "text": "two days later"
+    }
+  ],
+  "learning_opt_out": false,
+  "status": "Available"
+}

@@ -1,0 +1,2762 @@
+{
+  "name": "Awizowanie wyplaty",
+  "intents": [
+    {
+      "intent": "General_Jokes",
+      "examples": [
+        {
+          "text": "Do you have humor?"
+        },
+        {
+          "text": "Do you have a joke?"
+        },
+        {
+          "text": "Can you tell me a joke?"
+        },
+        {
+          "text": "What is your favorite joke?"
+        },
+        {
+          "text": "Can you tell a joke?"
+        },
+        {
+          "text": "Are there jokes?"
+        },
+        {
+          "text": "What do you do for fun?"
+        },
+        {
+          "text": "Another joke"
+        },
+        {
+          "text": "Tell me something funny"
+        },
+        {
+          "text": "Tell me a joke"
+        },
+        {
+          "text": "Surprise me with something hilarious"
+        },
+        {
+          "text": "One more joke"
+        },
+        {
+          "text": "I'm bored"
+        },
+        {
+          "text": "I want a joke"
+        },
+        {
+          "text": "I am getting bored"
+        },
+        {
+          "text": "Do you like humor?"
+        },
+        {
+          "text": "Do you like fun?"
+        }
+      ],
+      "description": "Request a joke."
+    },
+    {
+      "intent": "awizowyplaty",
+      "examples": [
+        {
+          "text": "on Friday"
+        },
+        {
+          "text": "needs 450000"
+        },
+        {
+          "text": "payout"
+        },
+        {
+          "text": "I need 5 thousand euros on 30 October"
+        },
+        {
+          "text": "want to pay"
+        },
+        {
+          "text": "need pln"
+        },
+        {
+          "text": "payout 50000000 yield"
+        },
+        {
+          "text": "Tomorrow"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Bot_Control_Ignore_Undo",
+      "examples": [
+        {
+          "text": "Hold on! I think I want to do it differently."
+        },
+        {
+          "text": "Actually, I take that back"
+        },
+        {
+          "text": "Wait! Let's back up few steps and do that again"
+        },
+        {
+          "text": "Nothing"
+        },
+        {
+          "text": "Not yet"
+        },
+        {
+          "text": "Never"
+        },
+        {
+          "text": "Never mind"
+        },
+        {
+          "text": "Let us redo that again!"
+        },
+        {
+          "text": "It's not what I mean"
+        },
+        {
+          "text": "Ignore this"
+        },
+        {
+          "text": "I didn't mean to do that actually, let's go back"
+        },
+        {
+          "text": "I did not mean that?"
+        },
+        {
+          "text": "I change my mind."
+        },
+        {
+          "text": "Cancel"
+        }
+      ],
+      "description": "Ask the bot to take one step back."
+    },
+    {
+      "intent": "General_Security_Assurance",
+      "examples": [
+        {
+          "text": "What guards do you have in place to protect your customer's data?"
+        },
+        {
+          "text": "Secure conversation?"
+        },
+        {
+          "text": "Protection hacks?"
+        },
+        {
+          "text": "Precautions hackers?"
+        },
+        {
+          "text": "Is this conversation secure?"
+        },
+        {
+          "text": "Is this an official chat?"
+        },
+        {
+          "text": "Is this a trusted chat site?"
+        },
+        {
+          "text": "Is there a reason to distrust this chat?"
+        },
+        {
+          "text": "Is my payment information secure?"
+        },
+        {
+          "text": "Is my card info secure?"
+        },
+        {
+          "text": "In what way can I tell if my plastic is safe?"
+        },
+        {
+          "text": "I'd like proof of a secure chat"
+        },
+        {
+          "text": "How safe is my data?"
+        },
+        {
+          "text": "How is my credit card info secured?"
+        },
+        {
+          "text": "How do I know if my card info is kept safe?"
+        },
+        {
+          "text": "How do I know this chat is not a scam?"
+        },
+        {
+          "text": "Do you have protection against hacks?"
+        },
+        {
+          "text": "Customer info secured?"
+        },
+        {
+          "text": "Conversation secure?"
+        },
+        {
+          "text": "Can I be sure that my stored card details are held securely?"
+        },
+        {
+          "text": "Are you safe?"
+        },
+        {
+          "text": "Are you safe on hackers?"
+        },
+        {
+          "text": "Why would I trust this chat?"
+        },
+        {
+          "text": "Will my conversation remain secured?"
+        },
+        {
+          "text": "What safety measures are used to ensure that chat is secure?"
+        },
+        {
+          "text": "What makes this chat trustworthy?"
+        }
+      ],
+      "description": "Express concerns about the security of the bot."
+    },
+    {
+      "intent": "General_About_You",
+      "examples": [
+        {
+          "text": "Who are you?"
+        },
+        {
+          "text": "About you"
+        },
+        {
+          "text": "Can I use another language?"
+        },
+        {
+          "text": "Describe your self"
+        },
+        {
+          "text": "Do you have a name?"
+        },
+        {
+          "text": "Do you know who you are?"
+        },
+        {
+          "text": "How can I configure you?"
+        },
+        {
+          "text": "How do you function?"
+        },
+        {
+          "text": "How old are you?"
+        },
+        {
+          "text": "I want to set up the chat bot for my shop"
+        },
+        {
+          "text": "Introduce your self"
+        },
+        {
+          "text": "Let us talk about you"
+        },
+        {
+          "text": "Tell me about your life"
+        },
+        {
+          "text": "Tell me something about yourself"
+        },
+        {
+          "text": "What languages do you speak?"
+        },
+        {
+          "text": "What should I know about you?"
+        },
+        {
+          "text": "What's your name?"
+        },
+        {
+          "text": "Where are you from?"
+        },
+        {
+          "text": "Where were you born?"
+        },
+        {
+          "text": "Why are you here?"
+        }
+      ],
+      "description": "Request generic personal attributes."
+    },
+    {
+      "intent": "Bot_Control_Approve_Response",
+      "examples": [
+        {
+          "text": "ok"
+        },
+        {
+          "text": "That is the proper response."
+        },
+        {
+          "text": "That is right"
+        },
+        {
+          "text": "That is precisely what I was looking for"
+        },
+        {
+          "text": "Sweet"
+        },
+        {
+          "text": "Sure thing!"
+        },
+        {
+          "text": "Indeed!"
+        },
+        {
+          "text": "I like that"
+        },
+        {
+          "text": "I agree"
+        },
+        {
+          "text": "Great"
+        },
+        {
+          "text": "Got it"
+        },
+        {
+          "text": "For sure!"
+        },
+        {
+          "text": "Correct"
+        },
+        {
+          "text": "All right"
+        },
+        {
+          "text": "Affirmative. That's what I'm looking for."
+        },
+        {
+          "text": "okay"
+        },
+        {
+          "text": "acknowledge"
+        },
+        {
+          "text": "You read my mind"
+        },
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "Yeah, that's it!"
+        },
+        {
+          "text": "Very well. Let's do it."
+        },
+        {
+          "text": "This is alright"
+        },
+        {
+          "text": "That's exactly what I want"
+        },
+        {
+          "text": "That is what I need"
+        }
+      ],
+      "description": "Acknowledge that the response satisfies a question."
+    },
+    {
+      "intent": "Bot_Control_Confirm_Presence",
+      "examples": [
+        {
+          "text": "Anyone there?"
+        },
+        {
+          "text": "Are you leaving me?"
+        },
+        {
+          "text": "Are you on?"
+        },
+        {
+          "text": "Are you still around?"
+        },
+        {
+          "text": "Are you still here with me?"
+        },
+        {
+          "text": "Are you there?"
+        },
+        {
+          "text": "Did you go somewhere?"
+        },
+        {
+          "text": "Did you hear what I said?"
+        },
+        {
+          "text": "Have I lost you?"
+        },
+        {
+          "text": "I am still holding"
+        },
+        {
+          "text": "Is anybody here?"
+        },
+        {
+          "text": "Is anybody home?"
+        },
+        {
+          "text": "Speak to me if you are there."
+        },
+        {
+          "text": "Where'd you go?"
+        },
+        {
+          "text": "You around?"
+        },
+        {
+          "text": "Am I talking to someone?"
+        }
+      ],
+      "description": "Ask the bot to indicate that it is available."
+    },
+    {
+      "intent": "Bot_Control_Start_Over",
+      "examples": [
+        {
+          "text": "Back to the top"
+        },
+        {
+          "text": "Actually, let's start over"
+        },
+        {
+          "text": "Back to the beginning"
+        },
+        {
+          "text": "Begin over!"
+        },
+        {
+          "text": "Can we please start over?"
+        },
+        {
+          "text": "How can I start over?"
+        },
+        {
+          "text": "I need to reset."
+        },
+        {
+          "text": "I want start from the beginning"
+        },
+        {
+          "text": "I would like to start all over"
+        },
+        {
+          "text": "Let us reopen this again."
+        },
+        {
+          "text": "Let's go back to square one"
+        },
+        {
+          "text": "Let's pick this up from the top again."
+        },
+        {
+          "text": "One more time from the beginning"
+        },
+        {
+          "text": "Please initiate from the beginning"
+        },
+        {
+          "text": "Please reset"
+        },
+        {
+          "text": "Please start a new chat"
+        },
+        {
+          "text": "Restart"
+        },
+        {
+          "text": "Start over"
+        },
+        {
+          "text": "We need a do-over"
+        },
+        {
+          "text": "We will need to begin again"
+        }
+      ],
+      "description": "Restart bot or current flow."
+    },
+    {
+      "intent": "Bot_Control_Change_Subject",
+      "examples": [
+        {
+          "text": "A different matter"
+        },
+        {
+          "text": "Talk about something else"
+        },
+        {
+          "text": "Let us talk about something else"
+        },
+        {
+          "text": "Let us change the topic"
+        },
+        {
+          "text": "I have one more question"
+        },
+        {
+          "text": "Here is another issue"
+        },
+        {
+          "text": "Help me with this other question"
+        },
+        {
+          "text": "Discuss something else"
+        },
+        {
+          "text": "Chat about something else"
+        },
+        {
+          "text": "Change topic"
+        },
+        {
+          "text": "Can we talk about something else?"
+        },
+        {
+          "text": "Another thing"
+        }
+      ],
+      "description": "Change to a different topic."
+    },
+    {
+      "intent": "General_Ending",
+      "examples": [
+        {
+          "text": "Going now"
+        },
+        {
+          "text": "other than"
+        },
+        {
+          "text": "Time to go"
+        },
+        {
+          "text": "That's everything"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "Thanks very much, bye!"
+        },
+        {
+          "text": "Thanks, bye!"
+        },
+        {
+          "text": "Thank you for your time"
+        },
+        {
+          "text": "Stop talking to me"
+        },
+        {
+          "text": "Stop doing this"
+        },
+        {
+          "text": "Shut up"
+        },
+        {
+          "text": "Go away"
+        },
+        {
+          "text": "Get lost"
+        },
+        {
+          "text": "Finished now, good bye"
+        },
+        {
+          "text": "Ending this session"
+        },
+        {
+          "text": "End trial"
+        },
+        {
+          "text": "Cya later"
+        },
+        {
+          "text": "Catch you later"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "See you"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "Ok goodbye"
+        },
+        {
+          "text": "It was nice chatting with you"
+        },
+        {
+          "text": "I'm leaving now"
+        },
+        {
+          "text": "Im good thank you"
+        },
+        {
+          "text": "Im done"
+        },
+        {
+          "text": "I'm done"
+        },
+        {
+          "text": "I want to quit"
+        },
+        {
+          "text": "I have got to go"
+        },
+        {
+          "text": "I d like to stop doing this"
+        },
+        {
+          "text": "I am out of here"
+        },
+        {
+          "text": "I am leaving"
+        },
+        {
+          "text": "Hey bot go away"
+        },
+        {
+          "text": "Have a nice day?"
+        },
+        {
+          "text": "Goodbye"
+        },
+        {
+          "text": "Good. bye."
+        },
+        {
+          "text": "Go off"
+        }
+      ],
+      "description": "End the conversation."
+    },
+    {
+      "intent": "General_Human_or_Bot",
+      "examples": [
+        {
+          "text": "Are you human?"
+        },
+        {
+          "text": "Are you even real?"
+        },
+        {
+          "text": "Are you a robot?"
+        },
+        {
+          "text": "Are you a human or a bot?"
+        },
+        {
+          "text": "Am I talking to a person or am I talking to an AI?"
+        },
+        {
+          "text": "How can you prove you are a human?"
+        },
+        {
+          "text": "Is this a computer?"
+        },
+        {
+          "text": "Tell me, are you a human or no?"
+        },
+        {
+          "text": "Am I talking to a Bot?"
+        },
+        {
+          "text": "Are you real?"
+        },
+        {
+          "text": "Am I talking to Watson?"
+        },
+        {
+          "text": "Am I chatting with a human?"
+        }
+      ],
+      "description": "Ask if speaking to a human or a bot."
+    },
+    {
+      "intent": "Bot_Control_Clarification",
+      "examples": [
+        {
+          "text": "What are you talking about?"
+        },
+        {
+          "text": "What do you mean by that?"
+        },
+        {
+          "text": "What do you mean?"
+        },
+        {
+          "text": "What are you referring to?"
+        },
+        {
+          "text": "Come again?"
+        },
+        {
+          "text": "Explains"
+        },
+        {
+          "text": "I did not quite understand what you gave me"
+        },
+        {
+          "text": "I didn't quite understand what you said"
+        },
+        {
+          "text": "I didn't understand that properly"
+        },
+        {
+          "text": "I don't get it"
+        },
+        {
+          "text": "I don't understand what you're saying"
+        },
+        {
+          "text": "I don't understand"
+        },
+        {
+          "text": "I need more information"
+        },
+        {
+          "text": "Let's try to say that again more clearly, shall we?"
+        },
+        {
+          "text": "What are you saying?"
+        },
+        {
+          "text": "I didn't catch that"
+        },
+        {
+          "text": "Can you say that again please?"
+        }
+      ],
+      "description": "Repeat or clarify last statement."
+    },
+    {
+      "intent": "Bot_Control_Standby",
+      "examples": [
+        {
+          "text": "I would like to put you on hold"
+        },
+        {
+          "text": "In a moment"
+        },
+        {
+          "text": "Just a sec"
+        },
+        {
+          "text": "Just hold on"
+        },
+        {
+          "text": "Keep holding"
+        },
+        {
+          "text": "Hold on"
+        },
+        {
+          "text": "Let me see"
+        },
+        {
+          "text": "Need a minute here"
+        },
+        {
+          "text": "Out for a break"
+        },
+        {
+          "text": "Give me a few minutes to get together"
+        },
+        {
+          "text": "Give me a moment"
+        },
+        {
+          "text": "Give me a second"
+        },
+        {
+          "text": "Wait"
+        },
+        {
+          "text": "Back again soon"
+        },
+        {
+          "text": "Be back later"
+        },
+        {
+          "text": "Be patient with me"
+        },
+        {
+          "text": "Can you give me a moment?"
+        },
+        {
+          "text": "Can you wait for me?"
+        },
+        {
+          "text": "I want stop a moment"
+        },
+        {
+          "text": "I will be back"
+        }
+      ],
+      "description": "Indicate a delay in providing input to the bot."
+    },
+    {
+      "intent": "General_Negative_Feedback",
+      "examples": [
+        {
+          "text": "Hate you"
+        },
+        {
+          "text": "You're really irritating"
+        },
+        {
+          "text": "You're too stupid"
+        },
+        {
+          "text": "Do not like you?"
+        },
+        {
+          "text": "Everyone hates you"
+        },
+        {
+          "text": "I do not like you"
+        },
+        {
+          "text": "I hate this!"
+        },
+        {
+          "text": "I hate you"
+        },
+        {
+          "text": "It is annoying"
+        },
+        {
+          "text": "Quit annoying me"
+        },
+        {
+          "text": "Robots are boring"
+        },
+        {
+          "text": "Robots are stupid"
+        },
+        {
+          "text": "Stupid"
+        },
+        {
+          "text": "Why are you so annoying?"
+        },
+        {
+          "text": "Why are you stupid?"
+        },
+        {
+          "text": "You are having delusions"
+        },
+        {
+          "text": "You are on my nerves"
+        },
+        {
+          "text": "You are very frustrating"
+        },
+        {
+          "text": "You do not seem smart"
+        },
+        {
+          "text": "You're really frustrating"
+        }
+      ],
+      "description": "Express unfavorable feedback."
+    },
+    {
+      "intent": "weather",
+      "examples": [
+        {
+          "text": "will it rain"
+        },
+        {
+          "text": "How weather will look like?"
+        },
+        {
+          "text": "cold"
+        },
+        {
+          "text": "Is it hot"
+        },
+        {
+          "text": "snow"
+        }
+      ]
+    },
+    {
+      "intent": "Bot_Control_Reject_Response",
+      "examples": [
+        {
+          "text": "I don't need that"
+        },
+        {
+          "text": "I don't want that"
+        },
+        {
+          "text": "I wasn't looking for that"
+        },
+        {
+          "text": "It is not what I want"
+        },
+        {
+          "text": "It is not what I was looking for"
+        },
+        {
+          "text": "No I'm fine thanks"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "Not the right response"
+        },
+        {
+          "text": "You didn't understand me"
+        },
+        {
+          "text": "That is not true"
+        },
+        {
+          "text": "That sounds like the wrong response"
+        },
+        {
+          "text": "That was not my intent"
+        },
+        {
+          "text": "That was wrong, try again"
+        },
+        {
+          "text": "Wrong response"
+        },
+        {
+          "text": "You did not understand what I asked"
+        },
+        {
+          "text": "You did not understand what I said"
+        },
+        {
+          "text": "That answer is incorrect"
+        },
+        {
+          "text": "You're misunderstanding me"
+        },
+        {
+          "text": "Bad response"
+        },
+        {
+          "text": "I disagree"
+        },
+        {
+          "text": "I do not think it is the answer?"
+        }
+      ],
+      "description": "Indicate the bot's response does not address a question."
+    },
+    {
+      "intent": "General_Agent_Capabilities",
+      "examples": [
+        {
+          "text": "What else can you help me with?"
+        },
+        {
+          "text": "How can you solve my problems?"
+        },
+        {
+          "text": "How can you help me?"
+        },
+        {
+          "text": "How can I use you?"
+        },
+        {
+          "text": "Hi, what do you do?"
+        },
+        {
+          "text": "Help now"
+        },
+        {
+          "text": "Do you have a list of things I can talk to you about?"
+        },
+        {
+          "text": "I do not know what to ask"
+        },
+        {
+          "text": "I'd like to know what type of questions you can answer for me."
+        },
+        {
+          "text": "Is there anything you can help me with?"
+        },
+        {
+          "text": "Tell me about what kind of things you do?"
+        },
+        {
+          "text": "Tell me something"
+        },
+        {
+          "text": "What are you able to deal with?"
+        },
+        {
+          "text": "What are you able to understand?"
+        },
+        {
+          "text": "What are you capable of?"
+        },
+        {
+          "text": "What are you good at?"
+        },
+        {
+          "text": "What are you used for?"
+        },
+        {
+          "text": "What are your skills?"
+        },
+        {
+          "text": "What can I ask you to do?"
+        },
+        {
+          "text": "What do you do?"
+        },
+        {
+          "text": "What do you handle?"
+        },
+        {
+          "text": "How do I use you?"
+        },
+        {
+          "text": "What features are in here?"
+        },
+        {
+          "text": "What is this 4?"
+        },
+        {
+          "text": "What kinds of things can you do?"
+        },
+        {
+          "text": "Where can I find the frequently asked questions?"
+        },
+        {
+          "text": "Can you tell me what services you are able to help me with?"
+        },
+        {
+          "text": "Can you please give me a list of the types of things you can help me with?"
+        },
+        {
+          "text": "What are my options that you can help with?"
+        },
+        {
+          "text": "What are my options?"
+        }
+      ],
+      "description": "Request capabilities of the bot."
+    },
+    {
+      "intent": "Bot_Control_Unsure",
+      "examples": [
+        {
+          "text": "I haven't got a clue"
+        },
+        {
+          "text": "I have no idea what you are looking for"
+        },
+        {
+          "text": "I have no idea, actually"
+        },
+        {
+          "text": "I don t know what you want"
+        },
+        {
+          "text": "No idea"
+        },
+        {
+          "text": "To be honest, I m really not sure"
+        },
+        {
+          "text": "You got me"
+        },
+        {
+          "text": "I don t know what you need"
+        },
+        {
+          "text": "No clue"
+        },
+        {
+          "text": "I m not yet convinced"
+        },
+        {
+          "text": "I m not sure what will make you happy"
+        },
+        {
+          "text": "I m not certain I get what you re saying"
+        }
+      ],
+      "description": "Indicate no definite answer to a question."
+    },
+    {
+      "intent": "General_Positive_Feedback",
+      "examples": [
+        {
+          "text": "You are the best"
+        },
+        {
+          "text": "Brilliant!"
+        },
+        {
+          "text": "Can't believe you are that good"
+        },
+        {
+          "text": "How cool is this?"
+        },
+        {
+          "text": "I like what you did there! :)"
+        },
+        {
+          "text": "I'm looking forward to working with you again! :)"
+        },
+        {
+          "text": "Love your work"
+        },
+        {
+          "text": "Ok thank you"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "This is good"
+        },
+        {
+          "text": "This is great"
+        },
+        {
+          "text": "This is so cool"
+        },
+        {
+          "text": "You are awesome"
+        },
+        {
+          "text": "You are great"
+        },
+        {
+          "text": "You are wonderful"
+        },
+        {
+          "text": "You gave me exactly what I need!"
+        },
+        {
+          "text": "You the man"
+        },
+        {
+          "text": "You're a genius!"
+        },
+        {
+          "text": "You've been so helpful :)"
+        }
+      ],
+      "description": "Express positive sentiment or gratitude."
+    },
+    {
+      "intent": "General_Greetings",
+      "examples": [
+        {
+          "text": "Hello Agent"
+        },
+        {
+          "text": "Hello I am looking for some help here"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey how are you doing"
+        },
+        {
+          "text": "Hey there all"
+        },
+        {
+          "text": "Hey there"
+        },
+        {
+          "text": "Hey twin"
+        },
+        {
+          "text": "Hey you"
+        },
+        {
+          "text": "Hi advisor"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "How are things going?"
+        },
+        {
+          "text": "How are you today?"
+        },
+        {
+          "text": "How have you been?"
+        },
+        {
+          "text": "How is it going?"
+        },
+        {
+          "text": "How r u?"
+        },
+        {
+          "text": "Looking good eve"
+        },
+        {
+          "text": "Ok take me back"
+        },
+        {
+          "text": "What's new?"
+        },
+        {
+          "text": "What's up?"
+        },
+        {
+          "text": "Who is this?"
+        },
+        {
+          "text": "You there"
+        },
+        {
+          "text": "welcome"
+        },
+        {
+          "text": "vitam"
+        },
+        {
+          "text": "Have you been well?"
+        },
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "Good to see you"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "Good day"
+        },
+        {
+          "text": "bye"
+        }
+      ],
+      "description": "Greet the bot."
+    },
+    {
+      "intent": "General_Connect_to_Agent",
+      "examples": [
+        {
+          "text": "A real agent, please."
+        },
+        {
+          "text": "Agent help"
+        },
+        {
+          "text": "Call agent"
+        },
+        {
+          "text": "Can I connect to an agent?"
+        },
+        {
+          "text": "Can I speak to a human please?"
+        },
+        {
+          "text": "Can I speak to a live person?"
+        },
+        {
+          "text": "Can I speak to an advisor?"
+        },
+        {
+          "text": "Can I speak with somebody?"
+        },
+        {
+          "text": "Can I talk to someone?"
+        },
+        {
+          "text": "Can you assist me to connect to an agent?"
+        },
+        {
+          "text": "Can you connect me with a real person?"
+        },
+        {
+          "text": "Connect me to a live operator please."
+        },
+        {
+          "text": "Contact person"
+        },
+        {
+          "text": "Could you please transfer me to your master?"
+        },
+        {
+          "text": "Customer service representative please."
+        },
+        {
+          "text": "Do not want a robot?"
+        },
+        {
+          "text": "Hi can you transfer me"
+        },
+        {
+          "text": "How can I skip the recorded menu and go straight to a live person?"
+        },
+        {
+          "text": "I don't want to talk to a bot."
+        },
+        {
+          "text": "I don't want to talk to you"
+        },
+        {
+          "text": "I need to speak to a representative. How would I go about doing so?"
+        },
+        {
+          "text": "I want a manager"
+        },
+        {
+          "text": "I want agent"
+        },
+        {
+          "text": "I want an agent to help me"
+        },
+        {
+          "text": "I want to talk to a person"
+        },
+        {
+          "text": "I would like to speak to a human"
+        },
+        {
+          "text": "I would like to speak to someone"
+        },
+        {
+          "text": "Is there anyone there I can actually talk to for real?"
+        },
+        {
+          "text": "Need help from human"
+        },
+        {
+          "text": "Operator please"
+        },
+        {
+          "text": "Please assist me to get to an agent"
+        },
+        {
+          "text": "Yes, take me to a real person"
+        },
+        {
+          "text": "Where is the closest agent?"
+        },
+        {
+          "text": "Send me to an agent"
+        },
+        {
+          "text": "Put me through to someone"
+        },
+        {
+          "text": "Pls connect"
+        },
+        {
+          "text": "Please let me talk to a human being."
+        },
+        {
+          "text": "Please connect me to a live agent"
+        }
+      ],
+      "description": "Request a human agent."
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-location",
+      "values": []
+    },
+    {
+      "entity": "email",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "email",
+          "patterns": [
+            "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "unit",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "GBP",
+          "synonyms": [
+            "lb"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PLN",
+          "synonyms": [
+            "yield",
+            "gold",
+            "zlot"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "EUR",
+          "synonyms": [
+            "ojra"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-person",
+      "values": []
+    },
+    {
+      "entity": "sys-currency",
+      "values": []
+    },
+    {
+      "entity": "datetime",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "asap",
+          "synonyms": [
+            "as soon as possible",
+            "ealier"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "later",
+          "synonyms": [
+            "later"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "city",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Warszawa",
+          "synonyms": [
+            "warsaw",
+            "wawa",
+            "wawie",
+            "Warshards",
+            "vace"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Katowice",
+          "synonyms": [
+            "Katowice"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_51_1540383102070",
+      "metadata": {},
+      "event_name": "filled",
+      "dialog_node": "handler_69_1540417642579",
+      "previous_sibling": "handler_52_1540383102070"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_51_1540383102070",
+      "context": {
+        "currency_unit": "@unit"
+      },
+      "metadata": {},
+      "conditions": "@unit",
+      "event_name": "input",
+      "dialog_node": "handler_52_1540383102070",
+      "previous_sibling": "handler_53_1540383102070"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_51_1540383102070",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_53_1540383102070"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_9_1540393887605",
+      "metadata": {},
+      "variable": "$location",
+      "dialog_node": "slot_10_1540394541610",
+      "previous_sibling": "node_30_1540472622916"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Proszę wybrać oddział banku z mapy:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1540393887605",
+      "disabled": true,
+      "metadata": {},
+      "dialog_node": "node_30_1540472622916"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1540380406944",
+      "metadata": {},
+      "event_name": "filled",
+      "dialog_node": "handler_57_1540383756498",
+      "previous_sibling": "handler_8_1540380406944"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1540380406944",
+      "context": {
+        "location": "@city"
+      },
+      "metadata": {},
+      "conditions": "@city",
+      "event_name": "input",
+      "dialog_node": "handler_8_1540380406944",
+      "previous_sibling": "handler_9_1540380406944"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1540380406944",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_9_1540380406944"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "private": {
+          "location": {
+            "city": "Warsaw",
+            "latitude": "52.2326047",
+            "longitude": "20.780333"
+          },
+          "my_credentials": {
+            "user": "66786b4b-5ffd-4fc1-ad25-cef7b4f501be",
+            "api_key": "66786b4b-5ffd-4fc1-ad25-cef7b4f501be:g5rAsMIC6mstPmp6YUstnZgJImzoYOILfoZkMeGs9TC8nu9NGm3vAtpTw5sLVXpH",
+            "password": "g5rAsMIC6mstPmp6YUstnZgJImzoYOILfoZkMeGs9TC8nu9NGm3vAtpTw5sLVXpH"
+          }
+        }
+      },
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_4_1542303754126"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Prognoza pogody na najbliższe 10 dni w Warszawie: $weather.narrative"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1542303068212",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_2_1542303167852"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1540380517199",
+      "context": {
+        "currency_unit": "@sys-currency.unit",
+        "currency_value": "@sys-currency"
+      },
+      "metadata": {},
+      "conditions": "@sys-currency",
+      "event_name": "input",
+      "dialog_node": "handler_11_1540380517199",
+      "previous_sibling": "handler_12_1540380517199"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1540380517199",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_12_1540380517199"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1540380348712",
+      "context": {
+        "awizo_date": "@sys-date"
+      },
+      "metadata": {},
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_5_1540380348712",
+      "previous_sibling": "handler_6_1540380348712"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1540380348712",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_6_1540380348712"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Data awizacji to $awizo_date."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_19_1540469817838",
+      "disabled": true,
+      "metadata": {},
+      "conditions": "$awizo_date",
+      "dialog_node": "node_1_1541501149651"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1540394541610",
+      "context": {
+        "location": "@city"
+      },
+      "metadata": {},
+      "conditions": "@city",
+      "event_name": "input",
+      "dialog_node": "handler_11_1540394541610",
+      "previous_sibling": "handler_12_1540394541610"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1540394541610",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_12_1540394541610"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1540380236554",
+      "metadata": {
+        "_customization": {}
+      },
+      "variable": "$currency_value",
+      "dialog_node": "slot_10_1540380517199",
+      "previous_sibling": "slot_51_1540383102070"
+    },
+    {
+      "type": "standard",
+      "title": "GBP quota",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Maksymalna kwota wypłaty gotówki w GBP to $GBP_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"GBP\" && $currency_value>$GBP_quota",
+      "dialog_node": "node_29_1540463047575",
+      "previous_sibling": "node_44_1541509953014"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Dla jakiej kwoty awizo mam zlecić? W zależności od wysokości możemy korzystać z różnych oddziałów."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "!$currency_value",
+      "dialog_node": "node_18_1540452399994",
+      "previous_sibling": "node_9_1540393887605"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Do zamówienia wypłaty gotówki potrzebuję kwoty wraz z walutą wypłaty, daty oraz lokalizacji, gdzie umówiona kwota będzie oczekiwać."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_2_1540380348700",
+      "previous_sibling": "node_23_1540461872562"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Na mapie zaznaczone są oddziały, gdzie można zamówić na $awizo_date kwotę $currency_value $currency_unit. Proszę wybrać dogodne miejsce!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "action": "MAP"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "!$branchid && $location",
+      "dialog_node": "node_36_1540475939164",
+      "previous_sibling": "node_33_1540474873942"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "variable": "$location",
+      "dialog_node": "slot_7_1540380406944",
+      "previous_sibling": "slot_10_1540380517199"
+    },
+    {
+      "type": "standard",
+      "title": "PLN quota",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Maksymalna kwota wypłaty gotówki w PLN to $PLN_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"PLN\" && $currency_value>$PLN_quota",
+      "dialog_node": "node_38_1540458823399",
+      "previous_sibling": "node_21_1540454476120"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kwota awizo to $currency_value $currency_unit."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "conditions": "(@sys-currency or @sys-number or @unit) && ($currency_unit==\"USD\" && $currency_value<=$USD_quota && $currency_value>=$USD_min_quota)",
+      "dialog_node": "node_22_1540461822842",
+      "previous_sibling": "node_21_1540461773186"
+    },
+    {
+      "type": "standard",
+      "title": "EUR quota",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Maksymalna kwota wypłaty gotówki w EUR to $EUR_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"EUR\" && $currency_value>$EUR_quota",
+      "dialog_node": "node_43_1540459242579",
+      "previous_sibling": "node_42_1541509801589"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1540380236554",
+      "metadata": {
+        "_customization": {}
+      },
+      "variable": "$currency_unit",
+      "dialog_node": "slot_51_1540383102070",
+      "previous_sibling": "slot_4_1540380348712"
+    },
+    {
+      "type": "frame",
+      "title": "City",
+      "output": {
+        "generic": [
+          {
+            "title": "test1",
+            "options": [
+              {
+                "label": "label1",
+                "value": {
+                  "input": {
+                    "text": "blabla"
+                  }
+                }
+              },
+              {
+                "label": "label1",
+                "value": {
+                  "input": {
+                    "text": "tralala"
+                  }
+                }
+              }
+            ],
+            "description": "desc1",
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "action": null
+      },
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_18_1540452399994"
+      },
+      "conditions": "$action == \"CITY\" || @city",
+      "dialog_node": "node_9_1540393887605",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_19_1540469817838",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "EUR quota - min",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Minimalna kwota wypłaty gotówki w EUR to $EUR_min_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"EUR\" && $currency_value<$EUR_min_quota",
+      "dialog_node": "node_43_1541509904813",
+      "previous_sibling": "node_43_1540459242579"
+    },
+    {
+      "type": "standard",
+      "title": "PLN quota - min",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Minimalna kwota wypłaty gotówki w PLN to $PLN_min_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"PLN\" && $currency_value<$PLN_min_quota",
+      "dialog_node": "node_42_1541509801589",
+      "previous_sibling": "node_38_1540458823399"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kwota awizo to $currency_value $currency_unit."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "conditions": "(@sys-currency or @sys-number or @unit) && ($currency_unit ==\"PLN\" && $currency_value<=$PLN_quota && $currency_value>=$PLN_min_quota)",
+      "dialog_node": "node_21_1540461773186",
+      "previous_sibling": "node_17_1540452372039"
+    },
+    {
+      "type": "standard",
+      "title": "All collected",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Proszę potwierdzić zlecenie wypłaty kwoty $currency_value $currency_unit w dniu $awizo_date w $branch."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_14_1540469343073"
+      },
+      "conditions": "true",
+      "dialog_node": "node_31_1540455385144",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_36_1540475939164"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oferujemy gotówkę w następujących walutach: PLN, GBP, USD, EUR. Niestety obecnie nie wypłacamy w @sys-currency.unit."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit && $currency_unit!=\"EUR\" && $currency_unit!=\"GBP\" && $currency_unit!=\"USD\" && $currency_unit!=\"PLN\"",
+      "dialog_node": "node_21_1540454476120",
+      "previous_sibling": "node_18_1540452399994"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kwota awizo to $currency_value $currency_unit."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "conditions": "(@sys-currency or @sys-number or @unit) && ($currency_unit==\"GBP\" && $currency_value<=$GBP_quota && $currency_value>=$GBP_min_quota)",
+      "dialog_node": "node_23_1540461872562",
+      "previous_sibling": "node_22_1540461822842"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1540380236554",
+      "metadata": {
+        "_customization": {}
+      },
+      "variable": "$currency_value",
+      "dialog_node": "slot_81_1540419564671",
+      "previous_sibling": "handler_2_1540380348700"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "W jakiej lokalizacji mam szukać oddziałów do wypłaty gotówki?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "action": "CITY"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "!$location && !$branchid",
+      "dialog_node": "node_33_1540474873942",
+      "previous_sibling": "node_29_1540471971697"
+    },
+    {
+      "type": "standard",
+      "title": "GBP quota - min",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Minimalna kwota wypłaty gotówki w GBP to $GBP_min_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"GBP\" && $currency_value<$GBP_min_quota",
+      "dialog_node": "node_45_1541509994737",
+      "previous_sibling": "node_29_1540463047575"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1540380236554",
+      "metadata": {
+        "_customization": {}
+      },
+      "variable": "$awizo_date",
+      "dialog_node": "slot_4_1540380348712",
+      "previous_sibling": "slot_81_1540419564671"
+    },
+    {
+      "type": "standard",
+      "title": "USD quota",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Maksymalna kwota wypłaty gotówki w USD to $USD_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"USD\" && $currency_value>$USD_quota",
+      "dialog_node": "node_28_1540463006978",
+      "previous_sibling": "node_43_1541509904813"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_1_1540380236554",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1541501977107"
+      },
+      "conditions": "!$awizo_date || $awizo_date.after(today().plusDays(60)) || ($awizo_date.before(today().plusDays(2)) || ($awizo_date.before(today().plusDays(3)) && $currency_unit!=\"PLN\"))",
+      "dialog_node": "node_29_1540471971697",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_45_1541509994737"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kwota awizo to $currency_value $currency_unit."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "metadata": {},
+      "conditions": "(@sys-currency or @sys-number or @unit) && ($currency_unit==\"EUR\" && $currency_value<=$EUR_quota && $currency_value>=$EUR_min_quota)",
+      "dialog_node": "node_17_1540452372039",
+      "previous_sibling": "node_31_1540455385144"
+    },
+    {
+      "type": "standard",
+      "title": "USD quota - min",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Minimalna kwota wypłaty gotówki w USD to $USD_min_quota."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "currency_value": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "conditions": "$currency_unit ==\"USD\" && $currency_value<$USD_min_quota",
+      "dialog_node": "node_44_1541509953014",
+      "previous_sibling": "node_28_1540463006978"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Podano datę $awizo_date."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1540380236554",
+      "context": {
+        "setdate": "DATE",
+        "awizo_date": "@sys-date"
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_9_1540393887605"
+      },
+      "conditions": "@sys-date && @sys-date.before(today().plusDays(60)) && (@sys-date.after(today().plusDays(2)) || (@sys-date.after(today().plusDays(1)) && $currency_unit==\"PLN\"))",
+      "dialog_node": "node_19_1540469817838",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Proszę o podanie oczekiwanej daty wypłaty."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_29_1540471971697",
+      "metadata": {},
+      "conditions": "$awizo_date.after('2050-01-01')",
+      "dialog_node": "node_35_1541507471089",
+      "previous_sibling": "node_6_1541501693649"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kiedy gotówka ma oczekiwać na wypłatę?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_29_1540471971697",
+      "metadata": {},
+      "conditions": "!$awizo_date",
+      "dialog_node": "node_6_1541501693649",
+      "previous_sibling": "node_10_1541501977107"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Wypłata nie może nastąpić w dniu $awizo_date. Data jest zbyt daleko w przyszłości."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_29_1540471971697",
+      "metadata": {},
+      "conditions": "$awizo_date.after(today().plusDays(60))",
+      "dialog_node": "node_7_1541501704184",
+      "previous_sibling": "node_35_1541507471089"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Wypłata nie może nastąpić w dniu: $awizo_date. Nie będziemy mieli wystarczająco dużo czasu na przygotowanie gotówki. W przypadku wypłat w walucie $currency_unit obowiązuje trzydniowy interwał."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_29_1540471971697",
+      "metadata": {},
+      "conditions": "$awizo_date.before(today().plusDays(3)) && $currency_unit && $currency_unit!=\"PLN\"",
+      "dialog_node": "node_9_1541501851398",
+      "previous_sibling": "node_8_1541501783342"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Wypłata nie może nastąpić w dniu: $awizo_date. Nie będziemy mieli wystarczająco dużo czasu na przygotowanie gotówki. W przypadku wypłat w walucie PLN obowiązuje dwudniowy interwał."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_29_1540471971697",
+      "metadata": {},
+      "conditions": "$awizo_date.before(today().plusDays(2)) and $currency_unit==\"PLN\"",
+      "dialog_node": "node_8_1541501783342",
+      "previous_sibling": "node_7_1541501704184"
+    },
+    {
+      "type": "standard",
+      "title": "clear awizo date",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_29_1540471971697",
+      "context": {
+        "awizo_date": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1540380236554"
+      },
+      "dialog_node": "node_10_1541501977107"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_81_1540419564671",
+      "context": {
+        "currency_value": "@sys-number.numeric_value"
+      },
+      "metadata": {},
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_82_1540419564671",
+      "previous_sibling": "handler_83_1540419564671"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_81_1540419564671",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_83_1540419564671"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Dziękuję za rozmowę nie zapisuję awizo. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_31_1540455385144",
+      "metadata": {},
+      "conditions": "#Bot_Control_Ignore_Undo || #Bot_Control_Reject_Response",
+      "dialog_node": "node_28_1540471425183",
+      "previous_sibling": "node_14_1540469343073"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Zlecenie zostało złożone. Zapraszamy po odbiór gotówki $awizo_date."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_31_1540455385144",
+      "context": {
+        "action": "AWIZO"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#Bot_Control_Approve_Response",
+      "dialog_node": "node_14_1540469343073"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do widzenia! "
+              },
+              {
+                "text": "Dziękuję za rozmowę."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#General_Ending",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1539965907071",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Wpisałeś adres email: @email.literal, to uznajemy za daną chronioną. Prosze nie podawaj tego typu danych."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "mojemail": "@email.literal"
+      },
+      "metadata": {},
+      "conditions": "@email",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1541589008264",
+      "previous_sibling": "node_1_1542303068212"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "/emiliasmolko_dev/actions/Weather",
+          "type": "cloud_function",
+          "parameters": {
+            "latitude": "52.2328546",
+            "longitude": "20.920769",
+            "timePeriod": "10day"
+          },
+          "credentials": "$private.my_credentials",
+          "result_variable": "context.weather"
+        }
+      ],
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#weather",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1542303068212",
+      "previous_sibling": "node_2_1539965907071"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Czy mogę prosić o inne sformułowanie? Nie rozumiem."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1539965917175"
+    },
+    {
+      "type": "frame",
+      "title": "Awizo",
+      "output": {},
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_19_1540469817838"
+      },
+      "conditions": "#awizowyplaty || @sys-date || @sys-currency || @city || @unit || @sys-number || $branchid",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1540380236554",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1541589008264",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Jestem automatycznym asystentem. Realnym, ale nie jestem osobą."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#General_About_You",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1539965917175",
+      "previous_sibling": "node_1_1540380236554"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Dzień dobry, pomagam zamówić wypłatę gotówki w wybranym oddziale Banku."
+              },
+              {
+                "text": "Miło mi, mogę pomóc w złożeniu awizacji gotówki."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#General_Greetings || welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "fba2c8d2-d92d-491f-b216-0a11f16b3834",
+  "counterexamples": [
+    {
+      "text": "Today"
+    },
+    {
+      "text": "Tomorrow"
+    }
+  ],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
